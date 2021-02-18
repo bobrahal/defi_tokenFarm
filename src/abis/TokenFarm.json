@@ -1,0 +1,823 @@
+{
+  "contractName": "TokenFarm",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "contract DappToken",
+          "name": "_dappToken",
+          "type": "address"
+        },
+        {
+          "internalType": "contract DaiToken",
+          "name": "_daiToken",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "daiToken",
+      "outputs": [
+        {
+          "internalType": "contract DaiToken",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "dappToken",
+      "outputs": [
+        {
+          "internalType": "contract DappToken",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "name",
+      "outputs": [
+        {
+          "internalType": "string",
+          "name": "",
+          "type": "string"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.5.16+commit.9c3226ce\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"contract DappToken\",\"name\":\"_dappToken\",\"type\":\"address\"},{\"internalType\":\"contract DaiToken\",\"name\":\"_daiToken\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"constant\":true,\"inputs\":[],\"name\":\"daiToken\",\"outputs\":[{\"internalType\":\"contract DaiToken\",\"name\":\"\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"dappToken\",\"outputs\":[{\"internalType\":\"contract DappToken\",\"name\":\"\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"name\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{},\"notice\":\"The TokenFarm contract does this and that...\"}},\"settings\":{\"compilationTarget\":{\"/E/code/defi_tokenFarm/src/contracts/TokenFarm.sol\":\"TokenFarm\"},\"evmVersion\":\"petersburg\",\"libraries\":{},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/E/code/defi_tokenFarm/src/contracts/DaiToken.sol\":{\"keccak256\":\"0xdc32efc9f331019adb2f5b6ef522be567ea3f55fa5e2edf7e40c1cc2eda8c573\",\"urls\":[\"bzz-raw://2da523317f3d8442ac92f20915f911656de1ef40cba3247a24f1d7110c8062bf\",\"dweb:/ipfs/QmTaQJ9fdc3FWa154FsVnHuyxVUjwQa3YdxngE4wE3vmYC\"]},\"/E/code/defi_tokenFarm/src/contracts/DappToken.sol\":{\"keccak256\":\"0x6fdd8bbed566bb2bd7d948b3e373e1c41514034c3048c4863277fe58aba89a15\",\"urls\":[\"bzz-raw://b31c6f00516afbd3a1bd65fccb49fd114776b453822b6f726d904b24430d5606\",\"dweb:/ipfs/QmTZ3WVRuhpkSsYHCiRXAp6SPCAAqa3nUBwoLJKmSCmV5x\"]},\"/E/code/defi_tokenFarm/src/contracts/TokenFarm.sol\":{\"keccak256\":\"0x8d0b46c839142f34ba66b305dbc25d339aaadb904f1b6f35a58bd016a5a899a0\",\"urls\":[\"bzz-raw://81b52711724ea05e82d601a59ab68486a53388643a5830bc35a9245aa85e26be\",\"dweb:/ipfs/QmXELVHQczoa9SbRfdy9j9Fe8K31UZmfzbT78oHa2HwMRZ\"]}},\"version\":1}",
+  "bytecode": "0x60806040526040518060400160405280600f81526020017f4461707020546f6b656e204661726d00000000000000000000000000000000008152506000908051906020019061004f929190610123565b5034801561005c57600080fd5b506040516104533803806104538339818101604052604081101561007f57600080fd5b81019080805190602001909291908051906020019092919050505081600160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff16021790555080600260006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff16021790555050506101c8565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f1061016457805160ff1916838001178555610192565b82800160010185558215610192579182015b82811115610191578251825591602001919060010190610176565b5b50905061019f91906101a3565b5090565b6101c591905b808211156101c15760008160009055506001016101a9565b5090565b90565b61027c806101d76000396000f3fe608060405234801561001057600080fd5b50600436106100415760003560e01c806306fdde03146100465780635eb186f8146100c9578063be22f54614610113575b600080fd5b61004e61015d565b6040518080602001828103825283818151815260200191508051906020019080838360005b8381101561008e578082015181840152602081019050610073565b50505050905090810190601f1680156100bb5780820380516001836020036101000a031916815260200191505b509250505060405180910390f35b6100d16101fb565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b61011b610221565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b60008054600181600116156101000203166002900480601f0160208091040260200160405190810160405280929190818152602001828054600181600116156101000203166002900480156101f35780601f106101c8576101008083540402835291602001916101f3565b820191906000526020600020905b8154815290600101906020018083116101d657829003601f168201915b505050505081565b600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b600260009054906101000a900473ffffffffffffffffffffffffffffffffffffffff168156fea265627a7a72315820fee3f9a780827eeeae50bc05a26f8d1d13f393bf1a16a47646aa3ef22204d18964736f6c63430005100032",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b50600436106100415760003560e01c806306fdde03146100465780635eb186f8146100c9578063be22f54614610113575b600080fd5b61004e61015d565b6040518080602001828103825283818151815260200191508051906020019080838360005b8381101561008e578082015181840152602081019050610073565b50505050905090810190601f1680156100bb5780820380516001836020036101000a031916815260200191505b509250505060405180910390f35b6100d16101fb565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b61011b610221565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b60008054600181600116156101000203166002900480601f0160208091040260200160405190810160405280929190818152602001828054600181600116156101000203166002900480156101f35780601f106101c8576101008083540402835291602001916101f3565b820191906000526020600020905b8154815290600101906020018083116101d657829003601f168201915b505050505081565b600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b600260009054906101000a900473ffffffffffffffffffffffffffffffffffffffff168156fea265627a7a72315820fee3f9a780827eeeae50bc05a26f8d1d13f393bf1a16a47646aa3ef22204d18964736f6c63430005100032",
+  "sourceMap": "144:303:2:-;;;222:38;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;326:118;8:9:-1;5:2;;;30:1;27;20:12;5:2;326:118:2;;;;;;;;;;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;326:118:2;;;;;;;;;;;;;;;;;;;;;;;;;404:10;392:9;;:22;;;;;;;;;;;;;;;;;;430:9;419:8;;:20;;;;;;;;;;;;;;;;;;326:118;;144:303;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;:::o;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;:::-;;;;;;;",
+  "deployedSourceMap": "144:303:2:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;144:303:2;;;;;;;;;;;;;;;;;;;;;;;;;;;;;222:38;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;23:1:-1;8:100;33:3;30:1;27:10;8:100;;;99:1;94:3;90:11;84:18;80:1;75:3;71:11;64:39;52:2;49:1;45:10;40:15;;8:100;;;12:14;222:38:2;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;266:26;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;296:24;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;222:38;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;266:26::-;;;;;;;;;;;;;:::o;296:24::-;;;;;;;;;;;;;:::o",
+  "source": "pragma solidity^0.5.0;\r\n\r\n\r\nimport \"./DaiToken.sol\";\r\nimport \"./DappToken.sol\";\r\n\r\n\r\n/**\r\n * The TokenFarm contract does this and that...\r\n */\r\ncontract TokenFarm {\r\n\r\n\t// state variable - to be stored on the Blockchain\r\n\tstring public name = \"Dapp Token Farm\";\r\n\r\n\tDappToken public dappToken;\r\n\tDaiToken public daiToken;\r\n\r\n\tconstructor(DappToken _dappToken, DaiToken _daiToken) public {\r\n\t\tdappToken = _dappToken;\r\n\t\tdaiToken = _daiToken;\r\n\t}\r\n}\r\n",
+  "sourcePath": "E:/code/defi_tokenFarm/src/contracts/TokenFarm.sol",
+  "ast": {
+    "absolutePath": "/E/code/defi_tokenFarm/src/contracts/TokenFarm.sol",
+    "exportedSymbols": {
+      "TokenFarm": [
+        389
+      ]
+    },
+    "id": 390,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 363,
+        "literals": [
+          "solidity",
+          "^",
+          "0.5",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:22:2"
+      },
+      {
+        "absolutePath": "/E/code/defi_tokenFarm/src/contracts/DaiToken.sol",
+        "file": "./DaiToken.sol",
+        "id": 364,
+        "nodeType": "ImportDirective",
+        "scope": 390,
+        "sourceUnit": 181,
+        "src": "28:24:2",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "/E/code/defi_tokenFarm/src/contracts/DappToken.sol",
+        "file": "./DappToken.sol",
+        "id": 365,
+        "nodeType": "ImportDirective",
+        "scope": 390,
+        "sourceUnit": 362,
+        "src": "54:25:2",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": "The TokenFarm contract does this and that...",
+        "fullyImplemented": true,
+        "id": 389,
+        "linearizedBaseContracts": [
+          389
+        ],
+        "name": "TokenFarm",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "id": 368,
+            "name": "name",
+            "nodeType": "VariableDeclaration",
+            "scope": 389,
+            "src": "222:38:2",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_string_storage",
+              "typeString": "string"
+            },
+            "typeName": {
+              "id": 366,
+              "name": "string",
+              "nodeType": "ElementaryTypeName",
+              "src": "222:6:2",
+              "typeDescriptions": {
+                "typeIdentifier": "t_string_storage_ptr",
+                "typeString": "string"
+              }
+            },
+            "value": {
+              "argumentTypes": null,
+              "hexValue": "4461707020546f6b656e204661726d",
+              "id": 367,
+              "isConstant": false,
+              "isLValue": false,
+              "isPure": true,
+              "kind": "string",
+              "lValueRequested": false,
+              "nodeType": "Literal",
+              "src": "243:17:2",
+              "subdenomination": null,
+              "typeDescriptions": {
+                "typeIdentifier": "t_stringliteral_112892b16fc49edc60aefbde9609f7bfe1cf220ba7ef93ec6845dbc0b0b30cd5",
+                "typeString": "literal_string \"Dapp Token Farm\""
+              },
+              "value": "Dapp Token Farm"
+            },
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 370,
+            "name": "dappToken",
+            "nodeType": "VariableDeclaration",
+            "scope": 389,
+            "src": "266:26:2",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_contract$_DappToken_$361",
+              "typeString": "contract DappToken"
+            },
+            "typeName": {
+              "contractScope": null,
+              "id": 369,
+              "name": "DappToken",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 361,
+              "src": "266:9:2",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_DappToken_$361",
+                "typeString": "contract DappToken"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 372,
+            "name": "daiToken",
+            "nodeType": "VariableDeclaration",
+            "scope": 389,
+            "src": "296:24:2",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_contract$_DaiToken_$180",
+              "typeString": "contract DaiToken"
+            },
+            "typeName": {
+              "contractScope": null,
+              "id": 371,
+              "name": "DaiToken",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 180,
+              "src": "296:8:2",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_DaiToken_$180",
+                "typeString": "contract DaiToken"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 387,
+              "nodeType": "Block",
+              "src": "387:57:2",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 381,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 379,
+                      "name": "dappToken",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 370,
+                      "src": "392:9:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_DappToken_$361",
+                        "typeString": "contract DappToken"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 380,
+                      "name": "_dappToken",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 374,
+                      "src": "404:10:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_DappToken_$361",
+                        "typeString": "contract DappToken"
+                      }
+                    },
+                    "src": "392:22:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_DappToken_$361",
+                      "typeString": "contract DappToken"
+                    }
+                  },
+                  "id": 382,
+                  "nodeType": "ExpressionStatement",
+                  "src": "392:22:2"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 385,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 383,
+                      "name": "daiToken",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 372,
+                      "src": "419:8:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_DaiToken_$180",
+                        "typeString": "contract DaiToken"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 384,
+                      "name": "_daiToken",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 376,
+                      "src": "430:9:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_DaiToken_$180",
+                        "typeString": "contract DaiToken"
+                      }
+                    },
+                    "src": "419:20:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_DaiToken_$180",
+                      "typeString": "contract DaiToken"
+                    }
+                  },
+                  "id": 386,
+                  "nodeType": "ExpressionStatement",
+                  "src": "419:20:2"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 388,
+            "implemented": true,
+            "kind": "constructor",
+            "modifiers": [],
+            "name": "",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 377,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 374,
+                  "name": "_dappToken",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 388,
+                  "src": "338:20:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_contract$_DappToken_$361",
+                    "typeString": "contract DappToken"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 373,
+                    "name": "DappToken",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 361,
+                    "src": "338:9:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_DappToken_$361",
+                      "typeString": "contract DappToken"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 376,
+                  "name": "_daiToken",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 388,
+                  "src": "360:18:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_contract$_DaiToken_$180",
+                    "typeString": "contract DaiToken"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 375,
+                    "name": "DaiToken",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 180,
+                    "src": "360:8:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_DaiToken_$180",
+                      "typeString": "contract DaiToken"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "337:42:2"
+            },
+            "returnParameters": {
+              "id": 378,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "387:0:2"
+            },
+            "scope": 389,
+            "src": "326:118:2",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 390,
+        "src": "144:303:2"
+      }
+    ],
+    "src": "0:449:2"
+  },
+  "legacyAST": {
+    "attributes": {
+      "absolutePath": "/E/code/defi_tokenFarm/src/contracts/TokenFarm.sol",
+      "exportedSymbols": {
+        "TokenFarm": [
+          389
+        ]
+      }
+    },
+    "children": [
+      {
+        "attributes": {
+          "literals": [
+            "solidity",
+            "^",
+            "0.5",
+            ".0"
+          ]
+        },
+        "id": 363,
+        "name": "PragmaDirective",
+        "src": "0:22:2"
+      },
+      {
+        "attributes": {
+          "SourceUnit": 181,
+          "absolutePath": "/E/code/defi_tokenFarm/src/contracts/DaiToken.sol",
+          "file": "./DaiToken.sol",
+          "scope": 390,
+          "symbolAliases": [
+            null
+          ],
+          "unitAlias": ""
+        },
+        "id": 364,
+        "name": "ImportDirective",
+        "src": "28:24:2"
+      },
+      {
+        "attributes": {
+          "SourceUnit": 362,
+          "absolutePath": "/E/code/defi_tokenFarm/src/contracts/DappToken.sol",
+          "file": "./DappToken.sol",
+          "scope": 390,
+          "symbolAliases": [
+            null
+          ],
+          "unitAlias": ""
+        },
+        "id": 365,
+        "name": "ImportDirective",
+        "src": "54:25:2"
+      },
+      {
+        "attributes": {
+          "baseContracts": [
+            null
+          ],
+          "contractDependencies": [
+            null
+          ],
+          "contractKind": "contract",
+          "documentation": "The TokenFarm contract does this and that...",
+          "fullyImplemented": true,
+          "linearizedBaseContracts": [
+            389
+          ],
+          "name": "TokenFarm",
+          "scope": 390
+        },
+        "children": [
+          {
+            "attributes": {
+              "constant": false,
+              "name": "name",
+              "scope": 389,
+              "stateVariable": true,
+              "storageLocation": "default",
+              "type": "string",
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "name": "string",
+                  "type": "string"
+                },
+                "id": 366,
+                "name": "ElementaryTypeName",
+                "src": "222:6:2"
+              },
+              {
+                "attributes": {
+                  "argumentTypes": null,
+                  "hexvalue": "4461707020546f6b656e204661726d",
+                  "isConstant": false,
+                  "isLValue": false,
+                  "isPure": true,
+                  "lValueRequested": false,
+                  "subdenomination": null,
+                  "token": "string",
+                  "type": "literal_string \"Dapp Token Farm\"",
+                  "value": "Dapp Token Farm"
+                },
+                "id": 367,
+                "name": "Literal",
+                "src": "243:17:2"
+              }
+            ],
+            "id": 368,
+            "name": "VariableDeclaration",
+            "src": "222:38:2"
+          },
+          {
+            "attributes": {
+              "constant": false,
+              "name": "dappToken",
+              "scope": 389,
+              "stateVariable": true,
+              "storageLocation": "default",
+              "type": "contract DappToken",
+              "value": null,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "contractScope": null,
+                  "name": "DappToken",
+                  "referencedDeclaration": 361,
+                  "type": "contract DappToken"
+                },
+                "id": 369,
+                "name": "UserDefinedTypeName",
+                "src": "266:9:2"
+              }
+            ],
+            "id": 370,
+            "name": "VariableDeclaration",
+            "src": "266:26:2"
+          },
+          {
+            "attributes": {
+              "constant": false,
+              "name": "daiToken",
+              "scope": 389,
+              "stateVariable": true,
+              "storageLocation": "default",
+              "type": "contract DaiToken",
+              "value": null,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "contractScope": null,
+                  "name": "DaiToken",
+                  "referencedDeclaration": 180,
+                  "type": "contract DaiToken"
+                },
+                "id": 371,
+                "name": "UserDefinedTypeName",
+                "src": "296:8:2"
+              }
+            ],
+            "id": 372,
+            "name": "VariableDeclaration",
+            "src": "296:24:2"
+          },
+          {
+            "attributes": {
+              "documentation": null,
+              "implemented": true,
+              "isConstructor": true,
+              "kind": "constructor",
+              "modifiers": [
+                null
+              ],
+              "name": "",
+              "scope": 389,
+              "stateMutability": "nonpayable",
+              "superFunction": null,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "_dappToken",
+                      "scope": 388,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "contract DappToken",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "contractScope": null,
+                          "name": "DappToken",
+                          "referencedDeclaration": 361,
+                          "type": "contract DappToken"
+                        },
+                        "id": 373,
+                        "name": "UserDefinedTypeName",
+                        "src": "338:9:2"
+                      }
+                    ],
+                    "id": 374,
+                    "name": "VariableDeclaration",
+                    "src": "338:20:2"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "_daiToken",
+                      "scope": 388,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "contract DaiToken",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "contractScope": null,
+                          "name": "DaiToken",
+                          "referencedDeclaration": 180,
+                          "type": "contract DaiToken"
+                        },
+                        "id": 375,
+                        "name": "UserDefinedTypeName",
+                        "src": "360:8:2"
+                      }
+                    ],
+                    "id": 376,
+                    "name": "VariableDeclaration",
+                    "src": "360:18:2"
+                  }
+                ],
+                "id": 377,
+                "name": "ParameterList",
+                "src": "337:42:2"
+              },
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 378,
+                "name": "ParameterList",
+                "src": "387:0:2"
+              },
+              {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "operator": "=",
+                          "type": "contract DappToken"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 370,
+                              "type": "contract DappToken",
+                              "value": "dappToken"
+                            },
+                            "id": 379,
+                            "name": "Identifier",
+                            "src": "392:9:2"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 374,
+                              "type": "contract DappToken",
+                              "value": "_dappToken"
+                            },
+                            "id": 380,
+                            "name": "Identifier",
+                            "src": "404:10:2"
+                          }
+                        ],
+                        "id": 381,
+                        "name": "Assignment",
+                        "src": "392:22:2"
+                      }
+                    ],
+                    "id": 382,
+                    "name": "ExpressionStatement",
+                    "src": "392:22:2"
+                  },
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "operator": "=",
+                          "type": "contract DaiToken"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 372,
+                              "type": "contract DaiToken",
+                              "value": "daiToken"
+                            },
+                            "id": 383,
+                            "name": "Identifier",
+                            "src": "419:8:2"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 376,
+                              "type": "contract DaiToken",
+                              "value": "_daiToken"
+                            },
+                            "id": 384,
+                            "name": "Identifier",
+                            "src": "430:9:2"
+                          }
+                        ],
+                        "id": 385,
+                        "name": "Assignment",
+                        "src": "419:20:2"
+                      }
+                    ],
+                    "id": 386,
+                    "name": "ExpressionStatement",
+                    "src": "419:20:2"
+                  }
+                ],
+                "id": 387,
+                "name": "Block",
+                "src": "387:57:2"
+              }
+            ],
+            "id": 388,
+            "name": "FunctionDefinition",
+            "src": "326:118:2"
+          }
+        ],
+        "id": 389,
+        "name": "ContractDefinition",
+        "src": "144:303:2"
+      }
+    ],
+    "id": 390,
+    "name": "SourceUnit",
+    "src": "0:449:2"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.5.16+commit.9c3226ce.Emscripten.clang"
+  },
+  "networks": {
+    "5777": {
+      "events": {},
+      "links": {},
+      "address": "0x747430E8DfBB142CcFbFfb14e1Ece5F5Ba58b6Fc",
+      "transactionHash": "0x3eebe5478b13cac3dff8a65afae9b75af7e958f1745c1c13fa9e984b45791672"
+    }
+  },
+  "schemaVersion": "3.3.4",
+  "updatedAt": "2021-02-17T23:44:02.674Z",
+  "networkType": "ethereum",
+  "devdoc": {
+    "methods": {}
+  },
+  "userdoc": {
+    "methods": {},
+    "notice": "The TokenFarm contract does this and that..."
+  }
+}
